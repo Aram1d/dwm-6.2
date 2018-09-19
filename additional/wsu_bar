@@ -1,0 +1,14 @@
+#!/bin/sh
+FONT='-artwiz-cure-medium-r-normal--11-110-75-75-p-90-iso8859-1'
+
+getSysUpd() {
+    echo -ne "Au:$(pacman -Qu | wc -l)"
+    }
+
+getDate() { 
+    date_format="%a %d %b, %R" #stock: %H:%M %A %d %B
+		date_command=$(date +"$date_format")
+		echo -ne $date_command | sed 's/.\.//g'
+}
+
+xsetroot -name "$(getSysUpd) $(getDate)"
