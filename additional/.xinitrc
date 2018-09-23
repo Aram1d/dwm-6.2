@@ -1,7 +1,8 @@
 #!/bin/sh
-#
-# ~/.xinitrc
-#
+#####################
+# ~/.xinitrc for:   #
+# DWM Aram1d Config #
+#####################
 
 # source xinitc.d scripts
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
@@ -39,9 +40,12 @@ xset m 3
 # set background
 sh $HOME/.fehbg
 
-# start WM
+#set transparency
+xcompmgr -c &
+
+# start WM and status bar
 while true; do 
-dwm-status
-sleep 5s
+/usr/bin/dwm-status
+sleep 1s
 done &
 exec dwm
