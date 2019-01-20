@@ -38,7 +38,7 @@ static const char colors[NUMCOLORS][MAXCOLORS][8] = {
 
 
 /* tagging */
-static const char *tags[] = { "\uE19C Rem", "\uE26D Net", "\uE1D2 Media", "\uE02B Work", "\uE1EF term" , "\uE1C0 Misc",};
+static const char *tags[] = { "\uE19C Rem", "\uE26D Net", "\uE1D2 Media", "\uE04D Music","\uE02B Work", "\uE1EF term" , "\uE09F Vi En", "\uE1C0 Misc",};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -46,8 +46,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Qemu",     NULL,	  NULL,       1 << 6,	    0,	         -1 },
+	{ "Gimp",     NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
 };
 
 /* layout(s) */
