@@ -6,7 +6,7 @@ static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
+static const char *fonts[]          = { "siji:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -23,10 +23,15 @@ static const unsigned int borderalpha = OPAQUE;
 
 static const char *colors[][3]      = {
 	/*					fg         bg          border   */
-	[SchemeNorm] =	 { col_gray3, col_gray1,  col_gray2 },
-	[SchemeSel]  =	 { col_gray4, col_cyan,   col_cyan },
-	[SchemeWarn] =	 { col_black, col_yellow, col_red },
-	[SchemeUrgent]=	 { col_white, col_red,    col_red },
+        [SchemeNorm] =	 { "#FFFFFF", "#2E3440" , "#2E3440", },  // normal ( unselected win border | unselected text (tag) | unsel bg )
+        [SchemeSel]  =	 { "#FFFFFF", "#6A9BBB", "#3E4450",  },  // selected (selected win border | selected text (tag) | sel bg 0088ED)
+        [SchemeWarn] =	 { "#000000", "#ffff00", "#ff0000",  },  // urgent/warning  (black on yellow)
+        [SchemeUrgent]=	 { "#5EE88B", "#2E3440", "#2E4340",  }, // green text on normal bg
+        { "#ff61a2", "#2E3440", "#2E3440", }, //magenta
+        { "#8abeb7", "#2E3440", "#2E3440", }, //cyan
+        { "#81a2be", "#2E3440", "#2E3440", }, //blue
+        { "#8abeb7", "#2E3440", "#2E3440", }, //yellow
+        { "#8abeb7", "#2E3440", "#2E3440", }, //orange
 };
 
 static const unsigned int alphas[][3]      = {
