@@ -6,7 +6,7 @@ static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "siji:size=10" };
+static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -41,16 +41,36 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "\uf223 Rem", "\uf0ac Net", "\uf87c Media", "\uf121 Devel", "\uf0b1 Work", "\uf120 Term", "\uf108 Vi En", "\uf11b Games", "\uf592 Misc" };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class                 instance    title       tags mask     isfloating   monitor */
+
+  { "TelegramDesktop",    NULL,       NULL,       1 << 0,       0,           -1 },
+  { "Skype",               NULL,       NULL,       1 << 0,       0,           -1 },
+
+	{ "firefox",           NULL,       NULL,       1 << 1,       0,           -1 },
+  { "Chromium",            NULL,       NULL,       1 << 1,       0,           -1 },
+
+  { "Gimp",                NULL,       NULL,       1 << 2,       0,           -1 },
+  { "Rawtherapee",         NULL,       NULL,       1 << 2,       0,           -1 },
+  { "Inkscape",            NULL,       NULL,       1 << 2,       0,           -1 },
+  { "Vuescan",             NULL,       NULL,       1 << 2,       0,           -1 },
+
+  { "Atom",                NULL,       NULL,      1 <<  3,       0,           -1 },
+  { "jetbrains-webstorm",  NULL ,      NULL,      1 <<  3,       0,           -1 },
+
+  { "kile",                NULL,       NULL,      1 <<  4,       0,           -1 },
+  { "Texmaker",            NULL,       NULL,      1 <<  4,       0,           -1 },
+  { "robo3t",              NULL,       NULL,      1 <<  4,       0,           -1 },
+  { "libreoffice-writer",  NULL,       NULL,      1 <<  4,       0,           -1 },
+  { "libreoffice-calc",    NULL,       NULL,      1 <<  4,       0,           -1 },
+
+  { "Arandr",              NULL ,      NULL,      1 <<  8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -110,15 +130,15 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
+  TAGKEYS(                        0x26,                      0)
+  TAGKEYS(                        0xe9,                      1)
+  TAGKEYS(                        0x22,                      2)
+  TAGKEYS(                        0x27,                      3)
+  TAGKEYS(                        0x28,                      4)
+  TAGKEYS(                        0x2d,                      5)
+	TAGKEYS(                        0xe8,                      6)
+  TAGKEYS(                        0x5f,                      7)
+  TAGKEYS(                        0xe7,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
@@ -138,4 +158,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
