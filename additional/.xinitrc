@@ -27,6 +27,8 @@ xset fp default
 [[ -d $HOME/.local/share/fonts ]] && xset +fp $HOME/.local/share/fonts
 xset fp rehash
 
+numlockx &
+
 # turn monitor off after 60min
 xset s off
 xset dpms 3600 3600 3600
@@ -36,6 +38,7 @@ xset m 3
 
 # set WM to a name with Java recognises
 #wmname LG3D
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # set background
 sh $HOME/.fehbg
@@ -43,7 +46,7 @@ sh $HOME/.fehbg
 #set transparency
 xcompmgr -c &
 
-# start WM and status bar
+# start WM and status bar, which is reloaded every second
 while true; do 
 /usr/bin/dwm-status
 sleep 1s
