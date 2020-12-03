@@ -50,27 +50,27 @@ static const Rule rules[] = {
 	 */
 	/* class                 instance    title       tags mask     isfloating   monitor */
 
-  { "TelegramDesktop",    NULL,       NULL,       1 << 0,       0,           -1 },
-  { "Skype",               NULL,       NULL,       1 << 0,       0,           -1 },
+  { "TelegramDesktop",    NULL,       NULL,       1 << 0,       0,             -1,     0},
+  { "Skype",               NULL,       NULL,       1 << 0,       0,           -1,    0},
 
-	{ "firefox",           NULL,       NULL,       1 << 1,       0,           -1 },
-  { "Chromium",            NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "firefox",           NULL,       NULL,       1 << 1,       0,           -1,    0},
+  { "Chromium",            NULL,       NULL,       1 << 1,       0,           -1,    0},
 
-  { "Gimp",                NULL,       NULL,       1 << 2,       0,           -1 },
-  { "Rawtherapee",         NULL,       NULL,       1 << 2,       0,           -1 },
-  { "Inkscape",            NULL,       NULL,       1 << 2,       0,           -1 },
-  { "Vuescan",             NULL,       NULL,       1 << 2,       0,           -1 },
+  { "Gimp",                NULL,       NULL,       1 << 2,       0,           -1,    0},
+  { "Rawtherapee",         NULL,       NULL,       1 << 2,       0,           -1,    0},
+  { "Inkscape",            NULL,       NULL,       1 << 2,       0,           -1,    0},
+  { "Vuescan",             NULL,       NULL,       1 << 2,       0,           -1,    0},
 
-  { "Atom",                NULL,       NULL,      1 <<  3,       0,           -1 },
-  { "jetbrains-webstorm",  NULL ,      NULL,      1 <<  3,       0,           -1 },
+  { "Atom",                NULL,       NULL,      1 <<  3,       0,           -1,    0},
+  { "jetbrains-webstorm",  NULL ,      NULL,      1 <<  3,       0,           -1,    1},
 
-  { "kile",                NULL,       NULL,      1 <<  4,       0,           -1 },
-  { "Texmaker",            NULL,       NULL,      1 <<  4,       0,           -1 },
-  { "robo3t",              NULL,       NULL,      1 <<  4,       0,           -1 },
-  { "libreoffice-writer",  NULL,       NULL,      1 <<  4,       0,           -1 },
-  { "libreoffice-calc",    NULL,       NULL,      1 <<  4,       0,           -1 },
+  { "kile",                NULL,       NULL,      1 <<  4,       0,           -1,    0},
+  { "Texmaker",            NULL,       NULL,      1 <<  4,       0,           -1,    0},
+  { "robo3t",              NULL,       NULL,      1 <<  4,       0,           -1,    0},
+  { "libreoffice-writer",  NULL,       NULL,      1 <<  4,       0,           -1,    0},
+  { "libreoffice-calc",    NULL,       NULL,      1 <<  4,       0,           -1,    0},
 
-  { "Arandr",              NULL ,      NULL,      1 <<  8,       0,           -1 },
+  { "Arandr",              NULL ,      NULL,      1 <<  8,       0,           -1,    0},
 };
 
 /* layout(s) */
